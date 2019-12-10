@@ -80,14 +80,14 @@
     &-title {
         margin-bottom: 10px;
         font-size: 48px;
-        font-weight: 700;
+        @include f700;
         line-height: 72px;
     }
 
     &-text {
         margin-bottom: 50px;
         font-size: 20px;
-        font-weight: 500;
+        @include f500;
         line-height: 30px;
     }
 
@@ -104,13 +104,13 @@
             height: 56px;
             border: none;
             font-size: 14px;
-            font-weight: 500;
+            @include f500;
             padding-left: 25px;
             padding-right: 60px;
 
             &::placeholder {
                 color: #90a4ae;
-                font-weight: 500;
+                @include f500;
             }
         }
 
@@ -146,14 +146,15 @@
         &+button {
             margin-left: 5px;
         }
-        &.mixitup-control-active{
+
+        &.mixitup-control-active {
             background-color: $red;
             color: #fff;
         }
     }
 }
 
-.products__inner-box{
+.products__inner-box {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -162,7 +163,7 @@
 .product__item {
     max-width: 442px;
     width: 100%;
-    box-shadow: 0px 1px 2px 0px rgba(205, 214, 222,0.75);
+    box-shadow: 0px 1px 2px 0px rgba(205, 214, 222, 0.75);
     margin-bottom: 30px;
 
     &-img {
@@ -180,6 +181,7 @@
         padding: 10px 30px;
         align-items: center;
         min-height: 90px;
+        @include f500;
         border-bottom: 1px solid #e7ecf2;
     }
 
@@ -189,59 +191,67 @@
 
     &-title {
         color: $bg;
-        font-weight: 500;
+        @include f700;
         font-size-adjust: 18px;
         display: block;
     }
 
     &-category {
-        font-size:14px;
+        font-size: 14px;
         color: $green;
         display: block;
     }
-    &-price{
+
+    &-price {
         font-size: 20px;
         color: $bg;
-        font-weight: 700;
+        @include f700;
     }
-    &-info{
+
+    &-info {
         display: flex;
         align-items: center;
         justify-content: space-between;
         min-height: 70px;
         padding: 10px 30px;
     }
-    &-author{
+
+    &-author {
         display: flex;
         align-items: center;
         max-width: 245px;
-        .avatar{
+
+        .avatar {
             width: 30px;
             height: 30px;
             border-radius: 50%;
             background-position: center;
             display: inline-block;
-            background-repeat:no-repeat;
+            background-repeat: no-repeat;
             background-size: cover;
-            margin-right: 14px;   
+            margin-right: 14px;
         }
-        span{
-        font-weight: 500;
-        font-size: 14px;
+
+        span {
+            @include f500;
+            font-size: 14px;
         }
-        &-star{
+
+        &-star {
             font-size: 12px;
-            span{
+
+            span {
                 color: $bg;
             }
         }
     }
 }
 
-.products__bottom-btn{
-   
+.products__bottom-btn {
+
     text-align: center;
-    button{
+
+    button {
         margin-top: 45px 5px 0;
         box-shadow: 0px 1px 3px 0px rgba(204, 216, 228, 0.75);
         border: none;
@@ -249,6 +259,7 @@
         color: $bg;
         padding: 20px 30px;
         cursor: pointer;
+
         &.mixitup-control-active {
             background-color: $red;
             color: #fff;
@@ -260,32 +271,35 @@
 
 //end products
 //start product-slider
-.product-slider{
+.product-slider {
     padding: 110px 0px 120px;
-    .slick-dots{
+
+    .slick-dots {
         text-align: center;
         margin-top: 50px;
-        li{
+
+        li {
             display: inline;
             margin-left: 4px;
-            margin-right:4px;
-            &.slick-active{
-                button{
+            margin-right: 4px;
+
+            &.slick-active {
+                button {
                     background-color: $green;
                 }
-                
+
             }
-           
-            button{
+
+            button {
                 border-radius: 50%;
                 background-color: rgb(232, 232, 232);
-                border:none;
+                border: none;
                 font-size: 0;
                 width: 16px;
                 height: 16px;
                 cursor: pointer;
                 outline: none;
-               
+
             }
         }
     }
@@ -295,3 +309,106 @@
 
 
 //end product-slider
+
+//advantages-star
+
+.advantages {
+    background-color: $bg;
+    padding: 100px 0;
+
+}
+
+.advantages__title {
+    color: #fff;
+}
+
+.advantages__inner {
+    display: flex;
+    justify-content: space-between;
+}
+
+.advantages__item {
+
+    text-align: center;
+    max-width: 370px;
+    padding: 0px 15px;
+   
+
+    &:hover {
+        .advantages__item-images{
+            background-color: $green;
+             transition: all .3s;
+             g{
+                 fill:#fff;
+             }
+        }
+        .advantages__item-title {
+            color: $green;
+             transition: all .3s;
+        }
+        
+    }
+
+    &-images {
+        width: 114px;
+        height: 114px;
+        border-radius: 50%;
+        background-color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto 30px;
+    }
+
+    &-title {
+        margin-bottom: 25px;
+        color: #fff;
+        @include f500;
+        font-size: 24px;
+    }
+
+    &-text {
+        font-size: 15px;
+    }
+}
+
+//advantage-end
+
+//start author
+
+.author{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 750px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__box{
+        max-width: 650px;
+        width: 100%;
+        min-height: 215px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $green;
+    }
+    &__title{
+        font-size: 30px;
+        line-height: 30px;
+        color: #fff;
+        margin-right: 45px;
+        max-width: 262px;
+        span{
+            @include f700;
+        }
+    }
+    &__link{
+        font-size: 18px;
+        line-height: 36px;
+        padding:14px 40px;
+        background-color: #fff;
+    }
+}
+
+//end author
